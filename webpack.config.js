@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: {
     app: [
-      '@babel/polyfill',
+      'babel-polyfill',
       './src/app.js',
     ],
   },
@@ -12,12 +12,12 @@ module.exports = {
     filename: 'app.bundle.js',
   },
   module: {
-    rules: [{
+    loaders: [{
         test: /\.js?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-           presets: ['@babel/preset-env', '@babel/preset-stage-0']
+           presets: ['env', 'stage-0']
         }
     }]
   }
